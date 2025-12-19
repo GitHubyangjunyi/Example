@@ -6,12 +6,23 @@ import PackageDescription
 let package = Package(
     name: "Example",
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Example",
             targets: ["Example"]
         ),
     ],
+	traits: [
+		"Foo",
+		.trait(name: "Bar",
+			  enabledTraits: [
+				"Foo"// Bar 特性开启时也启用 Foo 特性
+			  ]),
+		.trait(name: "FooBar", enabledTraits: [
+			"Foo",
+			"Bar",
+		]),
+		.default(enabledTraits: ["Foo"])// 默认启用 Foo 特性
+	],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.

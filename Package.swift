@@ -21,7 +21,7 @@ let package = Package(
 			"Foo",
 			"Bar",
 		]),
-		.default(enabledTraits: [])// 默认启用 Foo 特性
+		.default(enabledTraits: ["Foo"])// 默认启用 Foo 特性
 	],
     targets: [
         .target(

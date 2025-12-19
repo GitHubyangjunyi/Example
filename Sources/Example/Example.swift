@@ -9,5 +9,9 @@ public class A {
 		#else
 		print("xxxx")
 		#endif
+		
+#if Bar
+		print("Bar")
+#endif
 	}
 }

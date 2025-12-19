@@ -21,11 +21,9 @@ let package = Package(
 			"Foo",
 			"Bar",
 		]),
-		.default(enabledTraits: ["Foo"])// 默认启用 Foo 特性
+		.default(enabledTraits: [])// 默认启用 Foo 特性
 	],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Example"
         ),
